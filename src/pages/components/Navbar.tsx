@@ -39,7 +39,7 @@ const Navbar = (props: Props) => {
                 </div>
             </div>
                 <Link href='/cart'>
-                    <div className="p-2 bg-gray-100 rounded-full">
+                    <div className="p-2 bg-gray-100 rounded-full ">
                         <CiShoppingCart size={20} />
                     </div>
                 </Link>
