@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import {CiShoppingCart} from "react-icons/ci"
+import {BsChevronCompactUp} from "react-icons/bs"
+import {BiSearch} from "react-icons/bi"
 
 type Props = {};
 
@@ -43,6 +45,24 @@ const Navbar = (props: Props) => {
                         <CiShoppingCart size={20} />
                     </div>
                 </Link>
+                <span onClick={() => setShowNav(!showNav)} className="p-[9px] bg-gray-100 rounded-full md:hidden">
+                  <BsChevronCompactUp className={`transition ease-in duration-150 ${showNav ? "rotate-180" :"0"}`} />
+                </span>
+        </div>
+      </div>
+      <div className={`md:hidden ${showNav ? "pb-4 px-5": "h-0 invisible opacity-0"}`}>
+        <ul className="flex flex-col text-[15px] opacity-75 px-2">
+          <li><a href="/shop" className="py-3 inline-block w-full ">Shop</a></li>
+          <li><a href="/filters" className="py-3 inline-block w-full ">Filters</a></li>
+          <li><a href="/myproducts" className="py-3 inline-block w-full ">My Product</a></li>
+        </ul>
+        <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
+        <input type="text" 
+            className='outline-none bg-transparent ml-2 caret-blue-50 placeholder:font-light placeholder:text-gray-600 text-[15px]'
+            placeholder='Search'
+            autoComplete='false'
+            />
+            <button> <BiSearch size={20} className='opacity-50'/> </button>
         </div>
       </div>
     </div>
